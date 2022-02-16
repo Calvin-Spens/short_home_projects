@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Is this working"
+echo "so it is, but now can I do math?"
+
+declare -i tmp time hrs min sec
+
+((substitute= $2 - $1))
+echo $substitute
+((time= $3 / $substitute))
+echo 'time is' $time
+echo "$3/($2-$1)" | bc
+hrs= $((($3/($2-$1))%10))
+#min= $((60*($3/($2-$1))))
+#((min= $time * 60 % 60))
+#((sec= $time * 3600 % 60))
+#catchup= ( h m s )
+echo $hrs $min $sec
+#echo ${catchup[*]}
