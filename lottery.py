@@ -19,8 +19,9 @@ def lottery_choices(lott_num, team_dct):
         print(i)
         prob = [count/sum(lott_amount) for count in lott_amount]
         print(prob)
-        pick = choices(teams, prob)[0]
-        print(f"Pick number {i+1} is Team {team_dct['pick']}")
+        pick = int(choices(teams, prob)[0])
+        print(pick)
+        print(f"Pick number {i+1} is Team {team_dct[pick]}")
         lott_amount[pick-1] = 0 
 
 main()
